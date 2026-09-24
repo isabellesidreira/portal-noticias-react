@@ -1,5 +1,3 @@
-import Menu from "../components/Menu";
-import Rodape from "../components/Rodape";
 
 function Home(){
 return(
@@ -7,7 +5,6 @@ return(
 <h1>
     Página de Notícias
 </h1>
-<Menu/>
 <main id="conteudoPrincipal">
 <h2 className="destaque">
     Notícias
@@ -16,7 +13,6 @@ return(
     Em breve exibiremos as notícias.
 </p>
 </main>
-<Rodape/>
 </>
 );
 }
