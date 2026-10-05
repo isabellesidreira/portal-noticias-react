@@ -1,0 +1,59 @@
+
+table{
+    width:80% ;
+    margin: auto ;
+    text-align: center;
+}
+
+th, td{
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+
+th.data {
+min-width: 8rem;
+
+}
+
+.destaque{
+    text-align: center;
+    background-color:  coral;
+color: darkblue;
+padding: 0.5em;
+}
+
+.rodape {
+    text-align: center;
+padding: 0.2em;
+margin-top: 10em;    
+background-color: lightgrey;
+}
+
+.menu {
+    text-align: center;
+padding: 0.2em;
+background-color: lightgray;
+margin-bottom: 20px;
+}
+
+h1{
+ font-size: 2em;   
+}
+h2{
+    font-size: 1.5em;
+}
+
+.botao-menu{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+
+#divMensagem {
+ background-color: lightyellow;
+ margin: 1em;
+}

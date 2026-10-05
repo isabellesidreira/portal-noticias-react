@@ -1,0 +1,61 @@
+.skipLink{
+background-color: black;
+color: white;
+text-decoration: none;
+left: -9999px;
+position: absolute;
+padding: 10px;
+}
+
+.skipLink:focus{
+position: absolute;
+top: 1em;
+left: 0.8em;
+}
+
+#btnAcessibilidade{
+position: fixed;
+top: 20px;
+right: 20px;
+cursor: pointer;
+width: 150px;
+box-sizing: border-box;
+}
+
+#menuAcessibilidade{
+    position: fixed;
+    top: 50px;
+ right: 20px;
+ background-color: white;
+ border: 1px solid gray;
+ width: 150px;
+ box-sizing: border-box;
+}
+
+#menuAcessibilidade button{
+    display:block;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.contraste,
+ .contraste h1, 
+ .contraste h2,
+.contraste button{
+    background-color: black;
+    color: white;
+}
+
+.contraste th, .contraste td{
+ border: 1px solid yellow;   
+}
+
+.contraste a{
+color: yellow;
+}
+
+.contraste #divMensagem {
+     background-color: dark slateblue;
+color: white;
+}
+
