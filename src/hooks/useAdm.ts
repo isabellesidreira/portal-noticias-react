@@ -7,7 +7,7 @@ export function useAdm() {
     const [mensagem, setMensagem] = useState("");
 
 
-function cadastrarAdm(evento: SubmitEvent){
+function cadastrarAdm(evento: React.SubmitEvent<HTMLFormElement>){
 evento.preventDefault();
 const administrador = {nome, email, senha};
 const listaAdministradores = JSON.parse(localStorage.getItem("listaAdministradores") || "[]");
@@ -15,6 +15,11 @@ listaAdministradores.push(administrador);
 localStorage.setItem("listaAdministradores", JSON.stringify(listaAdministradores));
 setMensagem("Cadastro realizado com sucesso");
 }
+
+function buscarAdministradores(){
+    
+}
+
 return({
     nome, setNome,
     email, setEmail,
@@ -22,3 +27,4 @@ return({
  mensagem, setMensagem,
  cadastrarAdm})
 }
+
