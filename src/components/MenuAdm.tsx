@@ -11,6 +11,9 @@ return (
     <Link to="/telaCadastroAdm" className="botao-menu">
 Cadastro de Administrador .
     </Link>
+    <Link to="/telaListaAdm" className="botao-menu">
+Lista de Administradores
+    </Link>
 </p>
 </nav></>
 );

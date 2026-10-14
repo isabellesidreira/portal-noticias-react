@@ -6,14 +6,40 @@ export function TelaListaAdm(){
     const listaAdministradores = buscarAdministradores();
     return(
         <>
-        <h1 className="destaque">
+        <MenuAdm/>
+<h1 >
             Tela de listagem de ADM
         </h1>
         <main id="conteudoPrincipal">
-<MenuAdm/>
-<p>
-    Embreve
-</p>
+<table>
+            <thead>
+
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            E-mail
+        </th>
+    </tr>
+     </thead>
+     <tbody>
+        {
+            listaAdministradores.map(
+                (administrador: any) => (
+<tr>
+    <td>
+        {administrador.nome}
+    </td>
+    <td>
+        {administrador.email}
+    </td>
+</tr>
+                )
+            )
+        }
+     </tbody>
+</table>
         </main>
         </>
     )

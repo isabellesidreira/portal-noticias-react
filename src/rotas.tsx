@@ -37,7 +37,7 @@ Component: Adm
                 Component: TelaCadastroAdm
             },
             {
-                path: "/TelaListaAdm",
+                path: "/telaListaAdm",
                 Component: TelaListaAdm
             }
         ]
