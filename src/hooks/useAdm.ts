@@ -21,13 +21,24 @@ function buscarAdministradores(){
     return listaAdministradores
 }
 
+function excluirAdministrador(email: string){
+const listaAdministradores = buscarAdministradores();
+const novaLista = listaAdministradores.filter(
+    (administrador: any) => {
+administrador.email != email;
+    }
+);
+localStorage.setItem("listaAdministradores", JSON.stringify(novaLista));
+}
+
 return({
     nome, setNome,
     email, setEmail,
     senha, setSenha,
  mensagem, setMensagem,
  cadastrarAdm, 
- buscarAdministradores
+ buscarAdministradores,
+ excluirAdministrador
 })
  }
 
