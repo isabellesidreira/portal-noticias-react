@@ -17,7 +17,8 @@ setMensagem("Cadastro realizado com sucesso");
 }
 
 function buscarAdministradores(){
-    
+    const listaAdministradores = JSON.parse(localStorage.getItem("listaAdministradores")|| "[]");
+    return listaAdministradores
 }
 
 return({
@@ -25,6 +26,8 @@ return({
     email, setEmail,
     senha, setSenha,
  mensagem, setMensagem,
- cadastrarAdm})
-}
+ cadastrarAdm, 
+ buscarAdministradores
+})
+ }
 
