@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type Administrador from "../interfaces/Administrador";
 
 export function useAdm() {
     const [nome, setNome] = useState("");
@@ -14,9 +15,20 @@ const listaAdministradores = JSON.parse(localStorage.getItem("listaAdministrador
 listaAdministradores.push(administrador);
 localStorage.setItem("listaAdministradores", JSON.stringify(listaAdministradores));
 setMensagem("Cadastro realizado com sucesso");
+setTimeout(() => {
+    limparCampos();
+
+}, 1000);
 }
 
-function buscarAdministradores(){
+function limparCampos () {
+    setNome("");
+    setEmail("");
+    setSenha("");
+    setMensagem("");
+    }
+
+function buscarAdministradores(): Administrador[] {
     const listaAdministradores = JSON.parse(localStorage.getItem("listaAdministradores")|| "[]");
     return listaAdministradores
 }
@@ -24,9 +36,9 @@ function buscarAdministradores(){
 function excluirAdministrador(email: string){
 const listaAdministradores = buscarAdministradores();
 const novaLista = listaAdministradores.filter(
-    (administrador: any) => {
-administrador.email != email;
-    }
+    (administrador) => 
+administrador.email != email
+    
 );
 localStorage.setItem("listaAdministradores", JSON.stringify(novaLista));
 }
