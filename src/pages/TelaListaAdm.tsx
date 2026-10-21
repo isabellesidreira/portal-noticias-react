@@ -25,7 +25,7 @@ const navigate = useNavigate();
         <th>
             E-mail
         </th>
-        <th>
+        <th colSpan={2}>
             Ações
         </th>
     </tr>
@@ -40,6 +40,15 @@ const navigate = useNavigate();
     </td>
     <td>
         {administrador.email}
+    </td>
+    <td>
+        <button onClick={() => {
+            navigate("/telaCadastroAdm", {
+state: { administrador}
+            });
+        }}>
+            Alterar
+        </button>
     </td>
     <td>
         <button

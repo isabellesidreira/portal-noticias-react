@@ -7,8 +7,8 @@ return(
         Desenvolvido por: 
     </p>
     <Link to="/sobre">
-    Osvaldo Caldeira
     </Link>
+    Isabelle Sidreira
 </footer>
 );
 }

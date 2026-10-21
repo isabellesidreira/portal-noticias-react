@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type Administrador from "../interfaces/Administrador";
+import { useNavigate } from "react-router";
 
 export function useAdm() {
     const [nome, setNome] = useState("");
@@ -7,7 +8,7 @@ export function useAdm() {
     const [senha, setSenha] = useState("");
     const [mensagem, setMensagem] = useState("");
 
-
+const navigate = useNavigate();
 function cadastrarAdm(evento: React.SubmitEvent<HTMLFormElement>){
 evento.preventDefault();
 const administrador = {nome, email, senha};
@@ -43,6 +44,31 @@ administrador.email != email
 localStorage.setItem("listaAdministradores", JSON.stringify(novaLista));
 }
 
+function alterarAdministrador(
+    evento: React.SubmitEvent<HTMLFormElement>, 
+email: string) {
+evento.preventDefault();
+
+const listaAdministradores = buscarAdministradores();
+
+const novaLista = listaAdministradores.map(
+    (administrador) => {
+if(administrador.email == email){
+return {
+    nome, email, senha
+};
+}
+return(administrador)
+}
+);
+localStorage.setItem("listaAdministradores", JSON.stringify(novaLista));
+
+setMensagem("Administrador Alterado com sucesso");
+setTimeout(() => {
+navigate("/telaListaAdm"); 
+}, 1000);
+}
+
 return({
     nome, setNome,
     email, setEmail,
@@ -50,7 +76,8 @@ return({
  mensagem, setMensagem,
  cadastrarAdm, 
  buscarAdministradores,
- excluirAdministrador
+ excluirAdministrador,
+ alterarAdministrador
 })
  }
 
